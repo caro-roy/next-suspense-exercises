@@ -1,19 +1,15 @@
 import { range } from '@/utils'
 import LibraryGameCardSkeleton from '@/components/LibraryGameCardSkeleton'
+import GamesLayout from './GamesLayout'
 
-function VaporExercise() {
+function VaporExerciseLoading() {
   return (
-    <section className='max-width-wrapper'>
-      <header className='library-header'>
-        <h1>My games</h1>
-      </header>
-      <div className='game-grid'>
-        {range(12).map((game, index) => (
-          <LibraryGameCardSkeleton key={index} />
-        ))}
-      </div>
-    </section>
+    <GamesLayout gamesCount={0}>
+      {range(12).map(index => (
+        <LibraryGameCardSkeleton key={index} />
+      ))}
+    </GamesLayout>
   )
 }
 
-export default VaporExercise
+export default VaporExerciseLoading
